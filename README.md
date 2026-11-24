@@ -1,6 +1,6 @@
 # Abid Ahasan — Portfolio
 
-This repository contains the React/Vite portfolio deployed at [abidahasan2903.github.io](https://abidahasan2903.github.io/).
+A responsive React and Vite portfolio for Abid Ahasan, a Software Engineering student and mobile and web app developer. It showcases STUDORA and CALCORA, skills, education, a CV, and direct email contact.
 
 ## Run locally
 
@@ -11,9 +11,11 @@ npm run dev
 
 Build the static site with `npm run build`; preview it with `npm run preview`.
 
-## CV
+## CV and images
 
-The CV is included at `public/assets/Abid_Ahasan_CV.pdf`. The **View CV** button opens it in a new tab; **Download CV** downloads the PDF. See [public/assets/README.md](public/assets/README.md).
+The CV is included at `public/assets/Abid_Ahasan_CV.pdf`. The **View CV** button opens it in a new tab; **Download CV** downloads it. Replace the file at that exact path to update the published CV.
+
+Optional image paths for the hero portrait and project cards are documented in [public/assets/media-README.md](public/assets/media-README.md). Add the matching image files there and they will replace the fallback initials/icons.
 
 ## Contact form
 
