@@ -13,7 +13,7 @@ Build the static site with `npm run build`; preview it with `npm run preview`.
 
 ## CV
 
-The CV is included at `assets/Abid_Ahasan_CV.pdf`. The **View CV** button opens it in a new tab; **Download CV** downloads the PDF. See [assets/README.md](assets/README.md).
+The CV is included at `public/assets/Abid_Ahasan_CV.pdf`. The **View CV** button opens it in a new tab; **Download CV** downloads the PDF. See [public/assets/README.md](public/assets/README.md).
 
 ## Contact form
 
