@@ -19,7 +19,7 @@ Optional image paths for the hero portrait and project cards are documented in [
 
 ## Contact form
 
-The static portfolio posts messages to FormSubmit's AJAX endpoint for `abidahasan5002@gmail.com`; it has no paid backend or server key. The first test submission sends a one-time activation email to that inbox. Confirm it to enable delivery. If the form is offline or the service is unavailable, the page offers a prefilled `mailto:` fallback.
+The static portfolio posts messages to FormSubmit's AJAX endpoint for `abidahasan5002@gmail.com`; it has no paid backend or server key. Submissions include the sender's name, email as Reply-To, subject, and message in FormSubmit's table template. The first test submission sends a one-time activation email to that inbox. Confirm it to enable delivery. If the form is offline or the service is unavailable, the page offers a prefilled `mailto:` fallback.
 
 ## Deployment
 

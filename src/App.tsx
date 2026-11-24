@@ -96,13 +96,22 @@ function App() {
       const response = await fetch(`https://formsubmit.co/ajax/${email}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ ...data, _subject: `Portfolio message: ${subject}`, _url: window.location.href }),
+        body: JSON.stringify({
+          name: data.name.trim(),
+          email: data.email.trim(),
+          subject,
+          message: data.message.trim(),
+          _subject: `Portfolio message: ${subject}`,
+          _template: 'table',
+          _replyto: data.email.trim(),
+          _url: window.location.href,
+        }),
       });
       const result = await response.json().catch(() => ({})) as { success?: string | boolean; message?: string };
       if (!response.ok || result.success === false || result.success === 'false') throw new Error(result.message || 'The contact service could not accept this message.');
       form.reset();
       setFormState('success');
-      setFormMessage('Message submitted. Thanks for reaching out!');
+      setFormMessage('Message Sent Successfully! Thanks for reaching out.');
     } catch (error) {
       const offline = !navigator.onLine || (error instanceof Error && error.message === 'offline');
       setFormState(offline ? 'offline' : 'error');
@@ -131,7 +140,7 @@ function App() {
             <span className="hero-name">Abid Ahasan</span>
           </motion.h1>
           <motion.p className="hero-lede" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: .32 }}>
-            Software Engineering student, mobile &amp; web app developer, and creator of STUDORA and CALCORA. I build thoughtful tools that make everyday life a little easier.
+            I am a Software Engineering student at Green University of Bangladesh with a deep passion for technology and mobile/web application development. I love building practical digital solutions, experimenting with new features, and exploring emerging technologies to turn creative ideas into impactful software.
           </motion.p>
           <motion.div className="button-row hero-actions" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: .46 }}>
             <a className="button button-primary" href="#work">Explore my work <ArrowRight size={17} /></a>
@@ -191,11 +200,11 @@ function App() {
           <a className="phone-line" href="https://wa.me/8801522100498" target="_blank" rel="noreferrer"><MessageCircle size={16} /> WhatsApp · +880 1522-100498 <ArrowUpRight size={14} /></a><div className="contact-location"><MapPin size={16} /> Narsingdi, Dhaka, Bangladesh</div></div>
           <div className="contact-form-card"><div className="form-card-top"><span className="form-code">MESSAGE / 001</span><span className="form-live"><span /> DIRECT EMAIL</span></div><form id="contact-form" onSubmit={handleContact}>
             <label>Your name<input name="name" type="text" autoComplete="name" placeholder="How should I address you?" required maxLength={100} /></label>
-            <label>Your email<input name="email" type="email" autoComplete="email" placeholder="you@example.com" required maxLength={254} /></label>
+            <label>Email address<input name="email" type="email" autoComplete="email" placeholder="you@example.com" required maxLength={254} /></label>
             <label>Subject<input name="subject" type="text" placeholder="What’s on your mind?" required maxLength={150} /></label>
             <label>Your message<textarea name="message" rows={4} placeholder="Tell me a little about it..." required minLength={10} maxLength={5000} /></label>
             <label className="honeypot" aria-hidden="true">Leave this field empty<input name="_honey" type="text" tabIndex={-1} autoComplete="off" /></label>
-            <button className="button button-primary send-button" type="submit" disabled={formState === 'sending'}>{formState === 'sending' ? <><LoaderCircle className="spinner" size={17} /> Sending…</> : <>Send message <ArrowUpRight size={17} /></>}</button>
+            <button className="button button-primary send-button" type="submit" disabled={formState === 'sending'}>{formState === 'sending' ? <><LoaderCircle className="spinner" size={17} /> Sending…</> : <>Send <ArrowUpRight size={17} /></>}</button>
             <div className={`form-feedback ${formState}`} aria-live="polite" role="status">{formState === 'success' && <Check size={16} />}{formMessage}{(formState === 'offline' || formState === 'error') && <a href={mailFallback}>Open your email app <ArrowUpRight size={13} /></a>}</div>
           </form><p className="activation-note">First test submission sends a one-time FormSubmit activation email to {email}.</p></div>
         </div>
