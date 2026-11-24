@@ -79,7 +79,7 @@ function App() {
     return () => { active = false; };
   }, []);
 
-  const missingCv = () => setCvNotice(`The CV is not uploaded yet. Add the PDF at assets/Abid_Ahasan_CV.pdf and both buttons will activate automatically.`);
+  const missingCv = () => setCvNotice(`The CV brings together my education, skills, and experience. View it in your browser or download a copy.`);
 
   async function handleContact(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -180,7 +180,7 @@ function App() {
       </motion.section>
 
       <motion.section id="cv" className="section-wrap cv-section" initial={fade.initial} whileInView={fade.whileInView} viewport={{ once: true, margin: '-70px' }} transition={{ duration: .65 }}>
-        <div className="cv-panel"><div className="cv-illustration"><div className="cv-sheet"><span>AA / CV</span><i /><i /><i /><b>PDF</b></div><div className="cv-orbit cv-orbit-one" /><div className="cv-orbit cv-orbit-two" /></div><div className="cv-content"><p className="eyebrow">A CLOSER LOOK</p><h2>Want the full<br /><em>story?</em></h2><p>My CV brings together my education, skills, and experience. It will be available here as soon as I add the PDF.</p><CvLinks available={cvAvailable} onMissing={missingCv} /><p className="cv-file-hint">Expected file: <code>assets/Abid_Ahasan_CV.pdf</code></p><p className="cv-notice" role="status">{cvNotice || (!cvAvailable ? 'CV PDF not uploaded yet — add the file at the path above to enable both buttons.' : 'CV ready to view or download.')}</p></div></div>
+        <div className="cv-panel"><div className="cv-illustration"><div className="cv-sheet"><span>AA / CV</span><i /><i /><i /><b>PDF</b></div><div className="cv-orbit cv-orbit-one" /><div className="cv-orbit cv-orbit-two" /></div><div className="cv-content"><p className="eyebrow">A CLOSER LOOK</p><h2>Want the full<br /><em>story?</em></h2><p>My CV brings together my education, skills, and experience. View it in your browser or download a copy.</p><CvLinks available={cvAvailable} onMissing={missingCv} /><p className="cv-file-hint">CV file: <code>assets/Abid_Ahasan_CV.pdf</code></p><p className="cv-notice" role="status">{cvNotice || (!cvAvailable ? 'CV PDF not uploaded yet — add the file at the path above to enable both buttons.' : 'CV ready to view or download.')}</p></div></div>
       </motion.section>
 
       <motion.section id="contact" className="section-wrap content-section contact-section" initial={fade.initial} whileInView={fade.whileInView} viewport={{ once: true, margin: '-70px' }} transition={{ duration: .65 }}>

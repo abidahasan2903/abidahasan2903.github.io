@@ -1,7 +1,5 @@
-# CV file
+# CV
 
-Add your current PDF here using this exact filename:
+The portfolio CV is included in this folder as `Abid_Ahasan_CV.pdf`.
 
-`assets/Abid_Ahasan_CV.pdf`
-
-The portfolio automatically enables **View CV** (opens the PDF in a new tab) and **Download CV** after this file is added. No code changes are needed.
+The **View CV** button opens the PDF in a new tab, and **Download CV** saves it directly.
